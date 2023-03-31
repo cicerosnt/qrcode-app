@@ -6,6 +6,7 @@ function GerarQRCode() {
   
   if (inputUsuario.length <= 0) {
     alert("Por favor, informe para gerar o QGCode!");
+    output.style.display = 'none';
     return;
   }
   var GoogleChartAPI = 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chld=H&chl=';
