@@ -27,9 +27,6 @@ function GerarQRCode() {
   if(plotImage != null){
     elementDown.href = createdQrcode+".jpg";
     elementDown.style.display = "none"
-    // elementDown.addEventListener("click", function (e) {
-    //   elementDown.downloaded = "qrcode-app";
-    // })
   }else{
     elementDown.style.display = "none"
   }
