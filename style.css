@@ -122,24 +122,23 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .block ul {
-  list-style-type: decimal; /* Estilo de lista numerada */
-  padding-left: 20px; /* Distância entre o texto e a borda da lista */
-  font-family: Arial, sans-serif; /* Define a fonte da lista */
-  font-size: 16px; /* Tamanho da fonte */
-  color: var(--white); /* Cor do texto */
-  line-height: 1.5; /* Espaçamento entre as linhas */
+  list-style-type: decimal; 
+  padding-left: 20px; 
+  color: var(--white); 
+  line-height: 1.5; 
 }
 
 .blockul li {
-  margin-bottom: 10px; /* Espaço entre os itens da lista */
+  margin-bottom: 10px; 
 }
 
 .block ul li::marker {
-  color: #007bff; /* Cor do número (ou marcador) */
-  font-weight: bold; /* Deixa o número em negrito */
-  font-size: 18px; /* Aumenta o tamanho do número */
+  color: var(--green); 
+  font-weight: bold; 
+  font-size: 18px; 
 }
 .output .btn {
   justify-content: center;
