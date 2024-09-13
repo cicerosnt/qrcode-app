@@ -3,7 +3,7 @@
   --max-width: call(100% - 20%);
   --border-radius: 0.35rem;
 
-  --white: #FFF;
+  --white: #fff;
   --black: #000;
   --dark: #101026;
   --dark-700: #1d1d22;
@@ -11,9 +11,9 @@
   --green: #0dd876;
   // --green-900: #0dd876;
   --green-400: #1d1d22;
-  --blue-800: #0593FF;
+  --blue-800: #0593ff;
   --red-900: #ff3f4b;
-  
+
   --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
   --secondary-glow: linear-gradient(
     to bottom right,
@@ -24,49 +24,49 @@
 
   --background-end-rgb: 0, 0, 0;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, html{
+body,
+html {
   color: var(--white);
   background: var(--dark);
-  
+
   width: 100%;
   height: 100%;
-  
+
   font-family: "PT Sans", sans-serif;
 }
 
-.container{
+.container {
   width: 100%;
   height: 90%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
 }
 
-.content{
+.content {
   display: flex;
   justify-content: center;
-  
+
   gap: 1.5rem;
-  
+
   width: 50%;
   margin: auto auto;
 }
 
-.content_form{
+.content_form {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
-.txtarea{
+.txtarea {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -81,11 +81,10 @@ textarea {
   color: var(--dark);
   border-radius: 4px;
   transition: 180ms box-shadow ease-in-out;
-  
+
   min-width: 25em;
-  
+
   resize: none;
-  
 }
 textarea:focus {
   border-color: #2e2c2c;
@@ -100,7 +99,7 @@ textarea:focus {
   justify-content: center;
   align-items: center;
   gap: 1em;
-  
+
   width: 100%;
   height: 40px;
   background-color: var(--green);
@@ -111,54 +110,77 @@ textarea:focus {
   cursor: pointer;
 }
 
-.output{
+.output {
   display: none;
-
 }
-.output .btn{
+.block {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+.block .cover_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block ul {
+  list-style-type: decimal; /* Estilo de lista numerada */
+  padding-left: 20px; /* Distância entre o texto e a borda da lista */
+  font-family: Arial, sans-serif; /* Define a fonte da lista */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
+  line-height: 1.5; /* Espaçamento entre as linhas */
+}
+
+.blockul li {
+  margin-bottom: 10px; /* Espaço entre os itens da lista */
+}
+
+.block ul li::marker {
+  color: #007bff; /* Cor do número (ou marcador) */
+  font-weight: bold; /* Deixa o número em negrito */
+  font-size: 18px; /* Aumenta o tamanho do número */
+}
+.output .btn {
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
 
-.items{
+.items {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1em;
-  
-
 }
 
-.items a{
+.items a {
   color: #ebebeb;
   text-decoration: none;
-  
+
   display: flex;
   gap: 0.2em;
   transition: all 0.4s;
 }
 
-.items a:hover{
+.items a:hover {
   color: var(--green);
 }
 
-
-footer .container{
+footer .container {
   justify-content: center;
 }
 
-
-@media (max-width: 990px){
-  .title{
-    font-size: 1.5em
+@media (max-width: 990px) {
+  .title {
+    font-size: 1.5em;
   }
 
-  .content{
+  .content {
     width: 95%;
     flex-direction: column;
   }
-  .output{
+  .output {
     margin: 3em auto 0 auto;
   }
   textarea {

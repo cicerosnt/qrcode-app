@@ -14,7 +14,7 @@ function GerarQRCode() {
   }
   
   
-  var requestApi = 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chld=H&chl=';
+  var requestApi = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
   var createdQrcode = requestApi + encodeURIComponent(data);
   var plotImage = document.querySelector('#QRCodeImage');
   
