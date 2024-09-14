@@ -19,7 +19,7 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-- [Google Charts](https://developers.google.com/chart?hl=pt-br)
+- [qrserver.com](https://api.qrserver.com)
 
 ## 💻 Projeto
 
