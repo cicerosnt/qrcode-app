@@ -23,18 +23,16 @@ function GerarQRCode() {
     "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data="
   const createdQrcode = requestApi + encodeURIComponent(data)
 
-  // Mostrar a mensagem de "Carregando..."
   loadingDiv.style.display = "block"
   output.style.display = "none"
   elementDown.style.display = "none"
 
-  // Função para normalizar o nome do arquivo
   function normalizeFileName(text) {
     return text
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "") // Remove acentos
-      .replace(/[^a-zA-Z0-9 ]/g, "") // Remove caracteres especiais
-      .replace(/\s+/g, "-") // Substitui espaços por "-"
+      .replace(/[\u0300-\u036f]/g, "") 
+      .replace(/[^a-zA-Z0-9 ]/g, "") 
+      .replace(/\s+/g, "-") 
       .toLowerCase()
   }
 
@@ -43,10 +41,9 @@ function GerarQRCode() {
 
   img.onload = () => {
     plotImage.src = createdQrcode
-    loadingDiv.style.display = "none" // Oculta a mensagem de carregamento
-    output.style.display = "block" // Exibe o output
+    loadingDiv.style.display = "none" 
+    output.style.display = "block" 
 
-    // Criar Blob a partir da imagem e preparar para download
     fetch(createdQrcode)
       .then((response) => response.blob())
       .then((blob) => {
