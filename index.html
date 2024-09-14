@@ -1,68 +1,76 @@
 <!DOCTYPE html>
-<html lang='pt-br'>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="@cicerosnt" />
+    <meta name="keywords" content="qrcode, gerar qrcode, cicerosnt qrcode" />
+    <meta name="description" content="Gerador de QRCode simples, fácil e gratuito." />
+    <meta name="image" content="https://cicerosnt.github.io/qrcode-app/qrcode-app.png" />
+    <meta property="og:image" content="https://cicerosnt.github.io/qrcode-app/qrcode-app.png" />
 
-<head>
-  <meta charset='UTF-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <meta name='author' content='@cicerosnt' />
-  <meta name='keywords' content='qrcode, gerar qrcode, cicerosnt qrcode' />
-  <meta name='description' content='Gerador de QRCode simples, fácil e gratuito.' />
-  <meta name='image' content='https://cicerosnt.github.io/qrcode-app/qrcode-app.png' />
-  <meta property='og:image' content='https://cicerosnt.github.io/qrcode-app/qrcode-app.png'>
-  
-  <link rel='preconnect' href='https://fonts.googleapis.com'>
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-  
-  <link rel='shortcut icon' href='favicon.png' type='image/x-icon'>
-  
-  <link href='https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap' rel='stylesheet'>
-  
-  <link rel='stylesheet' href='style.css'>
-  <title>Gerador de QRCode com Google Chats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="/src/assets/favicon.png" type="image/x-icon" />
 
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    
+    <title>Gerador de QRCode | Google Chats</title>
+  </head>
 
   <body>
-    <main class='container'>
-     <div class='content'>
-        <div class='content_form'>
+    <main class="container">
+      <div class="content">
+        <section class="content_form">
           <header>
-            <h1 class='title'>Crie seu QRCode</h1>
+            <h1 class="title">Crie seu QRCode</h1>
           </header>
-          
-          <div class='txtarea'>
-            <label for='link'>Informe o texto/link:</label>
-            <textarea id='link' maxlength='256' rows='4' required></textarea>
+
+          <div class="textarea">
+            <label for="link">Informe o texto/link:</label>
+            <textarea id="link" maxlength="256" rows="4" required></textarea>
           </div>
-          
-          <button class='btn' onclick='GerarQRCode()'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 5.6L5 7l1.4-2.5L5 2l2.5 1.4L10 2L8.6 4.5L10 7zm12 9.8L22 14l-1.4 2.5L22 19l-2.5-1.4L17 19l1.4-2.5L17 14zM22 2l-1.4 2.5L22 7l-2.5-1.4L17 7l1.4-2.5L17 2l2.5 1.4zm-8.66 10.78l2.44-2.44l-2.12-2.12l-2.44 2.44zm1.03-5.49l2.34 2.34c.39.37.39 1.02 0 1.41L5.04 22.71c-.39.39-1.04.39-1.41 0l-2.34-2.34c-.39-.37-.39-1.02 0-1.41L12.96 7.29c.39-.39 1.04-.39 1.41 0"/></svg>
+
+          <button class="btn" onclick="GerarQRCode()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M7.5 5.6L5 7l1.4-2.5L5 2l2.5 1.4L10 2L8.6 4.5L10 7zm12 9.8L22 14l-1.4 2.5L22 19l-2.5-1.4L17 19l1.4-2.5L17 14zM22 2l-1.4 2.5L22 7l-2.5-1.4L17 7l1.4-2.5L17 2l2.5 1.4zm-8.66 10.78l2.44-2.44l-2.12-2.12l-2.44 2.44zm1.03-5.49l2.34 2.34c.39.37.39 1.02 0 1.41L5.04 22.71c-.39.39-1.04.39-1.41 0l-2.34-2.34c-.39-.37-.39-1.02 0-1.41L12.96 7.29c.39-.39 1.04-.39 1.41 0" />
+            </svg>
             Gerar QRCode
           </button>
-        </div>
-        
-        <div class='output' id='output'>
-          <div class="block">
-            <div class='cover_image'>
-              <img id='QRCodeImage' width='300'>
+        </section>
+
+        <section class="content_result" id="content_result">
+          <div id="loading" style="display: none">Carregando...</div>
+
+          <div class="output" id="output">
+            <div class="block">
+              <div class="cover_image" id="cover_image">
+                <img id="QRCodeImage" width="300" alt="QR Code gerado" />
+              </div>
+
+              <ul>
+                <li>Clique com o botão direito do mouse sobre a imagem desejada.</li>
+                <li>Selecione a opção "Salvar imagem como".</li>
+                <li>Escolha o local onde deseja salvar a imagem.</li>
+                <li>Clique em "Salvar" para concluir o download.</li>
+              </ul>
+
+              <p>Ou</p>
+
+              <a class="btn" id="downImage" download="qrcode-app">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z" />
+                </svg>
+                Baixar QRCode
+              </a>
             </div>
-          <ul>
-            <li>Clique com o botão direito do mouse sobre a imagem desejada.</li>
-            <li>Selecione a opção "Salvar imagem como".</li>
-            <li>Escolha o local onde deseja salvar a imagem no seu computador.</li>
-            <li>Clique em "Salvar" para concluir o download.</li>
-          </ul>
-          <a class='btn' id='downImage' download='qrcode-app'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>
-            Baixar
-          </a>
           </div>
-        </div>
-      
+        </section>
       </div>
     </main>
-    
+
     <footer>
       <div class='conteiner'>
           <div class='content'>
@@ -83,8 +91,7 @@
           </div>
       </div>
     </footer>
-    <script src='./main.js'></script>
-  
-  </body>
 
+    <script src="src/scripts/qrcode.js"></script>
+  </body>
 </html>

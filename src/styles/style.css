@@ -66,7 +66,7 @@ html {
   gap: 1em;
 }
 
-.txtarea {
+.textarea {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -110,6 +110,12 @@ textarea:focus {
   cursor: pointer;
 }
 
+.content_result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .output {
   display: none;
 }
@@ -118,7 +124,16 @@ textarea:focus {
   gap: 1.5rem;
   flex-direction: column;
 }
-.block .cover_image {
+.block a{
+  text-decoration: unset;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.block p{
+  text-align: center;
+}
+.cover_image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,11 +155,7 @@ textarea:focus {
   font-weight: bold; 
   font-size: 18px; 
 }
-.output .btn {
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
+
 
 .items {
   display: flex;
